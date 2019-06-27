@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+   
+
+
+    <h:head>
+        <title>Editando Requisições</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:panelGrid class="grade" columns="1">
+                <h:outputLabel value="Editar"/>
+
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="Número: "/>
+                    <h:inputText id="numero" value="#{requisicaoBean.requisicao.numero}" readonly="true" label="numero" > 
+                        <f:validateLength minimum="8" maximum="20" />
+                    </h:inputText>
+                    <h:message for="numero" style="color:red" />
+                </h:panelGrid>
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="Boletim Informativo: "/>
+                    <h:inputText id="boletim" value="#{requisicaoBean.requisicao.boletimInformativo}" readonly="true" required="true" label="boletim"> 
+                        <f:validateLength minimum="5" maximum="20" />
+                    </h:inputText>
+                    <h:message for="boletim" style="color:red" />
+                </h:panelGrid>
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="CNPJ: "/>
+                    <h:inputText id="cnpj" value="#{requisicaoBean.requisicao.cnpj}" readonly="true" required="true" label="boletim"> 
+                        <f:validateLength minimum="5" maximum="20" />
+                    </h:inputText>
+                    <h:message for="cnpj" style="color:red" />
+                </h:panelGrid>                        
+                <h:panelGrid columns="3">
+                    <h:outputLabel value="Situação: "/>
+                    <h:inputText id="status" value="#{requisicaoBean.requisicao.status}" required="true" label="status"> 
+                        <f:validateLength minimum="8" maximum="150" />
+                    </h:inputText>
+                    <h:message for="status" style="color:red" />
+                </h:panelGrid>   
+
+                <h:panelGrid columns="2">
+                    <h:commandButton value="OK" action="#{requisicaoBean.update(requisicaoBean.requisicao)}"/>
+                    <h:commandButton value="LIMPAR" action="#{requisicaoBean.clean()}"/>
+                </h:panelGrid>
+
+            </h:panelGrid>
+            <h:panelGrid columns="1">
+                <h:commandButton value="VOLTAR" action="index.xhtml"/>
+            </h:panelGrid>
+
+        </h:form>
+    </h:body>
+</html>
+

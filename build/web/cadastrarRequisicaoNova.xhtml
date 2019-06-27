@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="/templates/templateDefaultPages.xhtml"                
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <ui:define name="titulo">Cadastrar Requisição</ui:define>
+    <ui:define name="container">
+        <div class="container">
+            <h:form id="formulario">
+                <p:panel header="Cadastrar Nova Requisição">
+                    <h:panelGrid columns="2" cellpadding="5">
+
+                    <!--Gerar número de Boletim informativo automático. Ver tag spinner-->
+                    <h:outputLabel value="Boletim Informativo" />
+                    <p:inputText id="boletimInformativo" value="#{requisicaoBean.requisicao.boletimInformativo}"
+                                 readonly="true" label="boletimInformativo">
+                    </p:inputText>
+                    <!--Número da Viabilidade- para nova gerar número-->
+                    <p:outputLabel value="Número da Viabilidade"/>
+                    <p:inputText id="rsp" value="#{requisicaoBean.requisicao.rsp}" readonly="true"/>
+                    <!--em caso de renovação de alvará: CNPJ já traz os dados anteriores-->
+                    <h:outputLabel value="CNPJ"/>
+                    <p:inputText id="cnpj" value="#{requisicaoBean.requisicao.cnpj}" label="cnpj"
+                                 required="true" requiredMessage="CNPJ campo obrigatório.">
+                    </p:inputText>
+                    <p:message for="cnpj"/>
+                    <!--Razão Social-->
+                    <p:outputLabel value="Nome Empresarial"/>
+                    <p:inputText id="razaoSocial" value="#{requisicaoBean.requisicao.razaoSocial}"
+                                 required="true" requiredMessage="Campo Obrigatório!"/>
+                    <p:message for="razaoSocial"/>
+                    <!--Nome Fantasia-->
+                    <p:outputLabel value="Nome Fantasia"/>
+                    <p:inputText id="nomeFantasia" value="#{requisicaoBean.requisicao.nomeFantasia}"/>
+                    <!--Atividade - carregar lista atividades CNAE federal-->
+                    <p:outputLabel value="Atividade Econômica"/>
+                    <p:inputText id="atividade" value="#{requisicaoBean.requisicao.atividades}" required="true" requiredMessage="Campo Obrigatório!"/>
+                    <p:message for="atividade"/>
+                </h:panelGrid>
+                <p:commandButton value="ENVIAR" ajax="false" validateClient="true" styleClass="btn-primary" action="#{requisicaoBean.insert()}"/>
+                </p:panel>
+            </h:form>
+        </div>
+    </ui:define>
+</ui:composition>
+
