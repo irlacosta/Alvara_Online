@@ -43,13 +43,13 @@ public class RequisicaoBean implements Serializable {
     }
 
     public String edit(Requisicao request) { // editar STATUS, TEMPO DE ALVARÁ, ATIVIDADES, ...
-        //nãso esquece o new
+        //não esquece o new
         System.out.println("Entrou no editar!!");
         //Requisicao requisicao = new Requisicao();
-        requisicao = request; // o this aqui pega qual variável??
+        this.requisicao = request;
         return "editar";
     }
-
+  
     public String update(Requisicao request) {
         System.out.println("Entrou no atualizar!!");
         request.update();

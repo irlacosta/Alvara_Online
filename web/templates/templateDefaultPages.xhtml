@@ -24,20 +24,23 @@
                 </p:layoutUnit>
 
                 <p:layoutUnit position="west" size="250" collapsible="true" maxSize="300">
-                    <div >
-                        <p:panel styleClass="card no-border" header="Menu"
-                                 toggleable="true">
-                            <p:separator />
-                            <p:column>
-                                <p:submenu label="Solicitar Alvará">
-                                    <p:menuitem value="Nova Empresa" url="#" />
-                                    <!--empresa nova: solicitar CNPJ ou RSP-->
-                                    <p:menuitem value="Renovação de Alvará" url="#" />
-                                    <!--renovação: solicitar CNPJ-->
-                                </p:submenu>
-                            </p:column>
-                        </p:panel>
-                    </div>
+
+                    <p:menu>
+                        <p:submenu label="Alvaras">
+                            <p:menuitem value="Demo" url="http://www.primefaces.org/showcase-labs/ui/home.jsf" />
+                            <p:menuitem value="Documentation" url="http://www.primefaces.org/documentation.html" />
+                            <p:menuitem value="Forum" url="http://forum.primefaces.org/" />
+                            <p:menuitem value="Themes" url="http://www.primefaces.org/themes.html" />
+                            <p:menuitem value="Nova Empresa" url="#" />
+                            <!--empresa nova: solicitar CNPJ ou RSP-->
+                            <p:menuitem value="Renovação de Alvará" url="#" />
+                        </p:submenu>
+
+                    </p:menu>
+
+
+
+
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center" >

@@ -39,54 +39,45 @@
                         <p:menuitem value="Verificar Autenticidade Alvará" url="alvara.xhtml" />
                         <p:menuitem value="Legislação" url="legislacao.xhtml" />
                     </p:menu>
+
                 </p:layoutUnit>
-                
                 <p:layoutUnit position="center">
-                    <p:panel header="Cadastrar Nova Requisição">
+
+                    <p:panel header="Cadastro Usuário">
                         <h:form id="formulario">
+                            <!--  <p:growl id="messages" sticky="true" />  -->
                             <h:panelGrid id="grid" columns="1">
                                 <h:panelGrid columns="3">
-                                    <!--Gerar número de Boletim informativo automático. Ver tag spinner-->
-                                    <h:outputLabel value="Boletim Informativo" />
-                                    <h:inputText id="boletimInformativo" value="#{requisicaoBean.requisicao.boletimInformativo}" 
-                                                 requiredMessage="CNPJ campo obrigatório." readonly="true" label="boletimInformativo"/>
-                                    <h:message for="boletimInformativo"/>
+                                    <h:outputLabel value="Nome"/>
+                                    <h:inputText id="nome" value="#{usuarioBean.usuario.nome}" required="true" label="nome"> 
+                                        <f:validateLength minimum="5" maximum="150" />
+                                    </h:inputText>
+                                    <h:message for="nome" />
                                 </h:panelGrid>
                                 <h:panelGrid columns="3">
-                                    <!--Número da Viabilidade- para nova gerar número-->
-                                    <h:outputLabel value="Número da Viabilidade"/>
-                                    <h:inputText id="rsp" value="#{requisicaoBean.requisicao.rsp}"
-                                                 readonly="true" requiredMessage="Campo obrigatório."/>
-                                    <h:message for="rsp"/>
+                                    <h:outputLabel value="Login(CPF)"/>
+                                    <h:inputText id="cpf" value="#{usuarioBean.usuario.cpf}" required="true" label="cpf"> 
+                                        <f:validateLength minimum="5" maximum="20" />
+                                    </h:inputText>
+                                    <h:message for="cpf" />
                                 </h:panelGrid>
+
                                 <h:panelGrid columns="3">
-                                    <!--em caso de renovação de alvará: CNPJ já traz os dados anteriores-->
-                                    <h:outputLabel value="CNPJ"/>
-                                    <h:inputText id="cnpj" value="#{requisicaoBean.requisicao.cnpj}" label="cnpj"
-                                                 required="true" requiredMessage="CNPJ campo obrigatório."/>
-                                    <h:message for="cnpj"/>
+                                    <h:outputLabel value="E-mail"/>
+                                    <h:inputText id="email" value="#{usuarioBean.usuario.email}" required="true" label="email"> 
+                                        <f:validateLength minimum="5" maximum="150"/>
+                                    </h:inputText>
+                                    <h:message for="email" style="color:red"/>
                                 </h:panelGrid>
+
                                 <h:panelGrid columns="3">
-                                    <!--Razão Social-->
-                                    <h:outputLabel value="Razão Social"/>
-                                    <h:inputText id="razaoSocial" value="#{requisicaoBean.requisicao.razaoSocial}"
-                                                 required="true" requiredMessage="Campo Obrigatório!"/>
-                                    <h:message for="razaoSocial"/>
-                                </h:panelGrid>
-                                <h:panelGrid columns="3">
-                                    <!--Nome Fantasia-->
-                                    <h:outputLabel value="Nome Fantasia"/>
-                                    <h:inputText id="nomeFantasia" value="#{requisicaoBean.requisicao.nomeFantasia}"/>
-                                    <h:message for="nomeFantasia"/>
-                                </h:panelGrid>
-                                <h:panelGrid columns="3">
-                                    <!--Atividade - carregar lista atividades CNAE federal-->
-                                    <h:outputLabel value="Atividade Econômica"/>
-                                    <h:inputText id="atividade" value="#{requisicaoBean.requisicao.atividades}" required="true" requiredMessage="Campo Obrigatório!"/>
-                                    <h:message for="atividade"/>
-                                </h:panelGrid>
+                                    <h:outputLabel value="Senha"/>
+                                    <h:inputSecret id="senha" value="#{usuarioBean.usuario.senha}" required="true" /> 
+                                    <h:message for="senha" />
+                                </h:panelGrid>   
+
                                 <h:panelGrid columns="2">                                
-                                    <h:commandButton value="ENVIAR" action="#{requisicaoBean.insert()}" />
+                                    <h:commandButton value="ENVIAR" action="#{usuarioBean.cadastrar()}" />
                                 </h:panelGrid>
                             </h:panelGrid>
                         </h:form>

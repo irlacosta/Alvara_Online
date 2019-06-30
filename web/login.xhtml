@@ -5,7 +5,7 @@
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui">
-<ui:define name="container">
+    <ui:define name="container">
         <div class="container">
             <h:form id="formulario">
                 <p:panel header="Login">
@@ -17,18 +17,21 @@
 
                         </p:inputText>
                         <p:message for="login"/>
-
                         <h:outputLabel value="Senha"/>
                         <p:password id="senha" value="#{usuarioBean.usuario.senha}" required="true" label="senha"></p:password>
                         <p:message for="senha" style="color:red"/>
+                        <p:commandButton value="ENVIAR" ajax="false" validateClient="true" styleClass="btn-primary" action="#{usuarioBean.validar()}"/>
                     </h:panelGrid>
+                    <div id="msg3">
+                        <h:commandLink  action="editarSenha" value="Esqueci minha senha"/>
+                    </div>
 
-                    <p:commandButton value="ENVIAR" ajax="false" validateClient="true" styleClass="btn-primary" action="#{usuarioBean.validar()}"/>
+                    
                     <div id="msg2">
                         Ainda não possui acesso?
-                        <h:commandLink  action="cadastrarLogin" value="Cadastre-se"/>
+                        <h:commandLink  action="cadastrarUsuario" value="Cadastre-se"/>
                     </div>
-                    
+
                 </p:panel>
             </h:form>
         </div>
