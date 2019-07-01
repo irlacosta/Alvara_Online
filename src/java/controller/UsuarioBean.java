@@ -3,12 +3,17 @@ import java.io.Serializable;
 import java.util.LinkedList;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import model.Analista;
+import model.Requerente;
 import model.Usuario;
+
 
 @ManagedBean
 @SessionScoped
  public class UsuarioBean implements Serializable{
     private Usuario usuarioLogado = new Usuario();
+    private Requerente requerente = new Requerente();
+    private Analista analista = new Analista();
     private Usuario usuario = new Usuario();
     private LinkedList<Usuario> usuarios = new LinkedList();
     private boolean editando;

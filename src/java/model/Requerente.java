@@ -9,17 +9,15 @@ package model;
  *
  * @author Irla Silva
  */
-public class Analista extends Usuario{
-    private int matricula;
+public class Requerente extends Usuario {
 
-    public Analista(int matricula, String nome, String cpf, String senha) {
+
+
+    public Requerente(String nome, String cpf, String senha) {
         super(nome, cpf, senha);
-        this.matricula = matricula;
     }
     
-    public Analista(){}
-
+    public Requerente() {
     
-    
-    
+    }
 }

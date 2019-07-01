@@ -5,15 +5,16 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Usuario implements Serializable{
-    private static final long serialVersionUID = 7371518231621030644L;
+    private static final long serialVersionUID = 1L;
     private String nome;
-    private String sobrenome;
     private String cpf; //cpf será o login
     private String email;
     private String senha;
     
-
-    public Usuario(){}
+    public Usuario() {
+        
+    }
+ 
     public Usuario(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
@@ -31,14 +32,6 @@ public class Usuario implements Serializable{
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getSobrenome() {
-        return sobrenome;
-    }
-
-    public void setSobrenome(String sobrenome) {
-        this.sobrenome = sobrenome;
     }
 
     public String getCpf() {
@@ -65,10 +58,9 @@ public class Usuario implements Serializable{
         this.senha = senha;
     }
 
-
     @Override
     public String toString() {
-        return "Usuario{" + "nome=" + nome + ", sobrenome=" + sobrenome + ", cpf=" + cpf + ", email=" + email + ", senha=" + senha + '}';
+        return "Usuario{" + "nome=" + nome + ", cpf=" + cpf + ", email=" + email + ", senha=" + senha + '}';
     }
 
     public List<Usuario> list(){
