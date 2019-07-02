@@ -20,3 +20,19 @@ public class Analista extends Usuario{
     public Analista(){}
  
 }
+
+//Analista acessa as seguintes páginas:
+//lista.xhtml (alterar nome da página para gerenciar viabilidades)
+//baixa de alvará
+//cadastro
+//acompanhar
+//cadastroRequisicaoNova
+//cadastroRequisicaoRenovacao
+//editar
+
+//o usuário comum (Requerente) acessa as seguintes páginas
+//cadastro
+//acompanhar
+//cadastroRequisicaoNova
+//cadastroRequisicaoRenovacao
+//editar
