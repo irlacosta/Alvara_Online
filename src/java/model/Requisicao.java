@@ -18,7 +18,6 @@ public class Requisicao { //lado requerente
     private String rsp; //RSP
     private int boletimInformativo; //sistema gera automatico
     private String cnpj;
-    private Status status;    
     private String razaoSocial;
     private String nomeFantasia;
     private int codLogradouro;
@@ -26,12 +25,14 @@ public class Requisicao { //lado requerente
     private int area;
     private Calendar dataGeraRequisicao;
     private List<Atividade> atividades;
+    private Status status;
     //private int data; //data da análise da requisicao
     //private int data; //data da emissão do alvará
     // validador de CNPJ usar o código semelhante do validador de CPF
     // converter usar o AjaxRender para atividades
 
-    public Requisicao() {}
+    public Requisicao() {
+    }
 
     public Requisicao(String rsp, int boletimInformativo, String cnpj, Status status) {
         this.rsp = rsp;
@@ -39,7 +40,7 @@ public class Requisicao { //lado requerente
         this.cnpj = cnpj;
         this.status = status;
     }
-    
+
     public String getRsp() {
         return rsp;
     }
@@ -114,13 +115,13 @@ public class Requisicao { //lado requerente
 
     @Override
     public String toString() {
-                String aux = "";
+        String aux = "";
         if (dataGeraRequisicao != null) {
             java.text.SimpleDateFormat sdf
                     = new SimpleDateFormat("dd/MM/yyyy"); //formatando a data
             aux = sdf.format(dataGeraRequisicao.getTime());
         }
-        return "Requisicao{" + "RSP=" + rsp + ", boletimInformativo=" + boletimInformativo + ", cnpj=" + cnpj + ", razaoSocial=" + razaoSocial + ", nomeFantasia=" + nomeFantasia + ", codLogradouro=" + codLogradouro + ", horario=" + horarioFuncionamento + ", area=" + area + ", data=" + dataGeraRequisicao + aux +'}';
+        return "Requisicao{" + "RSP=" + rsp + ", boletimInformativo=" + boletimInformativo + ", cnpj=" + cnpj + ", razaoSocial=" + razaoSocial + ", nomeFantasia=" + nomeFantasia + ", codLogradouro=" + codLogradouro + ", horario=" + horarioFuncionamento + ", area=" + area + ", data=" + dataGeraRequisicao + aux + '}';
     }
 
     public List<Requisicao> list() {

@@ -20,7 +20,7 @@
                         <h:outputLabel value="Senha"/>
                         <p:password id="senha" value="#{usuarioBean.usuario.senha}" required="true" label="senha"></p:password>
                         <p:message for="senha" style="color:red"/>
-                        <p:commandButton value="ENVIAR" ajax="false" validateClient="true" styleClass="btn-primary" action="#{usuarioBean.validar()}"/>
+                        <p:commandButton value="ENVIAR" styleClass="regCommandButton" ajax="false" validateClient="true" action="#{usuarioBean.validar()}"/>
                     </h:panelGrid>
                     <div id="msg3">
                         <h:commandLink  action="editarSenha" value="Esqueci minha senha"/>

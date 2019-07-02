@@ -1,32 +1,30 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<ui:composition template="/template/templateLogin.xhtml"                
-                xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:f="http://xmlns.jcp.org/jsf/core"
-                xmlns:h="http://xmlns.jcp.org/jsf/html"
-                xmlns:p="http://primefaces.org/ui"
-                xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-    <ui:define name="container">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
         <h:form>
             <h:panelGrid columns="1">
                 <p:outputLabel style="font-size: 20px;" value="Olá Analista, seja bem-vindo ao sistema de Alvarás Online"/>
             </h:panelGrid>
             <h:panelGrid columns="1">
-                <h:link value="Consulta" outcome="consultar"/>
+                <p:commandLink value="Consulta" />
             </h:panelGrid>
             <h:panelGrid columns="1">
-                <h:link value="Analisar Requições" outcome="listar"/>
+                <p:commandLink value="Analisar Requições" />
             </h:panelGrid>            
             <h:panelGrid columns="1">
-                <h:link value="Criar Nova Requisição" outcome="cadastrarRequisicao"/>
+                <p:commandLink value="Criar Nova Requisição" />
             </h:panelGrid>
             <h:panelGrid columns="1">
-                <h:link value="Listar Requisições" outcome="listar"/>
+                <p:commandLink value="Listar Requisições" />
             </h:panelGrid>
             <h:panelGrid columns="1">
-                <h:link value="Sair" outcome="login"/>
+                <p:commandLink value="Sair" />
             </h:panelGrid>
         </h:form>
-    </ui:define>
-</ui:composition>
+
+    </html>
 

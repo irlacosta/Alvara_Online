@@ -40,7 +40,7 @@
                         <p:menuitem value="Legislação" url="legislacao.xhtml" />
                     </p:menu>
                 </p:layoutUnit>
-                
+
                 <p:layoutUnit position="center">
                     <p:panel header="Cadastrar Nova Requisição">
                         <h:form id="formulario">
@@ -56,8 +56,8 @@
                                     <!--Número da Viabilidade- para nova gerar número-->
                                     <h:outputLabel value="Número da Viabilidade"/>
                                     <h:inputText id="rsp" value="#{requisicaoBean.requisicao.rsp}"
-                                                 readonly="true" requiredMessage="Campo obrigatório."/>
-                                    <h:message for="rsp"/>
+                                                 readonly="true" />
+                                    <h:message for="rsp" style="color: red"/>
                                 </h:panelGrid>
                                 <h:panelGrid columns="3">
                                     <!--em caso de renovação de alvará: CNPJ já traz os dados anteriores-->
@@ -86,7 +86,7 @@
                                     <h:message for="atividade"/>
                                 </h:panelGrid>
                                 <h:panelGrid columns="2">                                
-                                    <p:commandButton onfocus="Enviar"  value="ENVIAR" action="#{requisicaoBean.insert()}" />
+                                    <p:commandButton styleClass="regCommandButton"   value="ENVIAR" action="#{requisicaoBean.insert()}" />
                                 </h:panelGrid>
                             </h:panelGrid>
                         </h:form>

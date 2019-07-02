@@ -18,8 +18,5 @@ public class Analista extends Usuario{
     }
     
     public Analista(){}
-
-    
-    
-    
+ 
 }

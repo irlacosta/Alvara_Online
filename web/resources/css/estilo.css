@@ -15,6 +15,16 @@ div#j_idt20 {
     border: 0px;
 }
 
+.ui-button.regCommandButton{
+    background: #307399;
+    color: white;
+}
+
+.ui-button.ui-state-hover, .ui-button.ui-state-active{
+    background: #e3e9ea;
+    color: black;
+}
+
 #msg2 {
     float: left;
     padding: 10px;
@@ -93,19 +103,17 @@ td.icons {
     color: #222;
 }
 
-span.ui-menuitem-text {
-    color: black;
-}
-
 li.ui-menuitem-active {
     background-color: #307399;
 }
 
 li.ui-menuitem a.ui-menuitem-link:hover {
-    background: #eeeeee;
+    background: #307399;
+    color: white;
 }
 
 .submenuItem.ui-state-hover span.ui-menuitem-text {
+    background: #307399;;
     color: white;
 }
 
