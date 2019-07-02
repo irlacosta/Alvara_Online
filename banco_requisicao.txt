@@ -1,0 +1,74 @@
+-- phpMyAdmin SQL Dump
+-- version 4.5.1
+-- http://www.phpmyadmin.net
+--
+-- Host: 127.0.0.1
+-- Generation Time: 31-Mar-2017 às 02:22
+-- Versão do servidor: 10.1.13-MariaDB
+-- PHP Version: 7.0.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `bd`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `requisicao`
+--
+
+CREATE TABLE `requisicao` (
+`idrequisicao` INT(11) NOT NULL,
+`rsp` VARCHAR(20) NOT NULL,
+`boletiminformativo` INT(11) NOT NULL,
+`cnpj` VARCHAR(20) NOT NULL,
+`razaosocial` VARCHAR(100) NULL,
+`nomefantasia` VARCHAR(100) NULL,
+`codlogradouro` INT(20) NULL,
+`horariofuncionamento` TIME NULL,
+`area` INT NULL,
+`datarequisicao` DATETIME NULL,
+`atividades` VARCHAR(20) NULL ,
+`status` VARCHAR(150) NOT NULL
+) ENGINE = InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
+(1, 'RSP1900043111', '20271', '33.404.754/0001-61','Empresa LTDA','Empresa A','78101011','19:00:00','EM ESTUDO');
+
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
+(2, 'RSP1900043112', '20272', '33.404.754/0001-62','Empresa LTDA','Empresa A','78101012','19:00:00','EM ESTUDO');
+
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
+(3, 'RSP1900043113', '20273', '33.404.754/0001-63','Empresa LTDA','Empresa A','78101013','19:00:00','EM ESTUDO');
+
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
+(4, 'RSP1900043114', '20274', '33.404.754/0001-64','Empresa LTDA','Empresa A','78101014','19:00:00','EM ESTUDO');
+
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
+(5, 'RSP1900043115', '20279', '33.404.754/0001-65','Empresa LTDA','Empresa A','78101015','19:00:00','EM ESTUDO');
+
+ALTER TABLE `requisicao`
+  ADD PRIMARY KEY (`idrequisicao`);
+
+ALTER TABLE `requisicao`
+  MODIFY `idrequisicao` INT(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+
+
+
+
+
