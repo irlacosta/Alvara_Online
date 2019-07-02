@@ -41,21 +41,21 @@ CREATE TABLE `requisicao` (
 `status` VARCHAR(150) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
-INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
-(1, 'RSP1900043111', '20271', '33.404.754/0001-61','Empresa LTDA','Empresa A','78101011','19:00:00','EM ESTUDO');
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`,`atividades`, `status`) VALUES
+(1, 'RSP1900043111', '20271', '33.404.754/0001-61','Empresa LTDA','Empresa A','78101011','5611','EM ESTUDO');
 
-INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
-(2, 'RSP1900043112', '20272', '33.404.754/0001-62','Empresa LTDA','Empresa A','78101012','19:00:00','EM ESTUDO');
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`,`atividades`, `status`) VALUES
+(2, 'RSP1900043112', '20272', '33.404.754/0001-62','Empresa LTDA','Empresa A','78101012','5611','EM ESTUDO');
 
-INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
-(3, 'RSP1900043113', '20273', '33.404.754/0001-63','Empresa LTDA','Empresa A','78101013','19:00:00','EM ESTUDO');
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `atividades`, `status`) VALUES
+(3, 'RSP1900043113', '20273', '33.404.754/0001-63','Empresa LTDA','Empresa A','78101013','5611','EM ESTUDO');
 
-INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
-(4, 'RSP1900043114', '20274', '33.404.754/0001-64','Empresa LTDA','Empresa A','78101014','19:00:00','EM ESTUDO');
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `atividades`, `status`) VALUES
+(4, 'RSP1900043114', '20274', '33.404.754/0001-64','Empresa LTDA','Empresa A','78101014','5611','EM ESTUDO');
 
-INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `horariofuncionamento`, `area`, `datarequisicao`, `atividades`, `status`) VALUES
-(5, 'RSP1900043115', '20279', '33.404.754/0001-65','Empresa LTDA','Empresa A','78101015','19:00:00','EM ESTUDO');
-
+INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `atividades`, `status`) VALUES
+(5, 'RSP1900043115', '20279', '33.404.754/0001-65','Empresa LTDA','Empresa A','78101015','5611','EM ESTUDO');
+S
 ALTER TABLE `requisicao`
   ADD PRIMARY KEY (`idrequisicao`);
 
