@@ -79,10 +79,13 @@ public class RequisicaoDAO {
         try (Connection connection = new ConnectionFactory().getConnection();
                 PreparedStatement stmt
                 = connection.prepareStatement(RequisicaoSQLs.INSERT.getSql());) {
-            stmt.setString(1, request.getRsp()); //gerar número automático
+            stmt.setString(1, request.getRsp());
             stmt.setInt(2, request.getBoletimInformativo());
             stmt.setString(3, request.getCnpj());
-            stmt.setString(4, request.getStatus().name()); //chamada da enum
+            stmt.setString(4, request.getRazaoSocial());
+            stmt.setString(5, request.getNomeFantasia());
+            stmt.setInt(6, request.getAtividades());
+            stmt.setString(7, request.getStatus().name()); //chamada da enum
             System.out.println("Dados Gravados");
             return stmt.execute();
         } catch (SQLException e) {
@@ -104,9 +107,11 @@ public class RequisicaoDAO {
                 String rsp = rs.getString("rsp");
                 int boletiminformativo = rs.getInt("boletiminformativo");
                 String cnpj = rs.getString("cnpj");
+                String razaoSocial = rs.getString("razaoSocial");
+                String nomeFantasia = rs.getString("nomeFantasia");
+                int atividades = rs.getInt("atividades");
                 String status = rs.getString("status");
-                //construtor da Requisicao = String rsp, int boletimInformativo, String cnpj, Status status
-                list.add(new Requisicao(rsp, boletiminformativo, cnpj, Status.DEFERIDO)); //outras maneiras de chamar a enum nesse ponto??
+                list.add(new Requisicao(rsp, boletiminformativo, cnpj, razaoSocial, nomeFantasia, atividades, Status.DEFERIDO)); //outras maneiras de chamar a enum nesse ponto??
             }
             return list;
         } catch (SQLException e) {

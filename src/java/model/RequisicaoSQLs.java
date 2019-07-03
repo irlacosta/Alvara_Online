@@ -10,7 +10,7 @@ package model;
  * @author Irla Silva
  */
 public enum RequisicaoSQLs {
-    INSERT("insert into requisicao(rsp, boletiminformativo, cnpj, status) values (?, ?, ?, ?)"), 
+    INSERT("insert into requisicao(rsp, boletiminformativo, cnpj, razaosocial, nomefantasia, atividades, status) values (?, ?, ?, ?, ?, ?, ?)"), 
     LIST_ALL("select * from requisicao"),
     VALIDATE("select status from usuario where cnpj= ? AND rsp= ?"),
     DELETE("delete from requisicao where rsp=? AND cnpj=?"),

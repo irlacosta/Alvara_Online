@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author Irla Silva
  */
-public class Requisicao {   
+public class Requisicao {
 
     private String rsp;
     private int boletimInformativo;
@@ -24,14 +24,25 @@ public class Requisicao {
     private String horarioFuncionamento;
     private int area;
     private Calendar dataGeraRequisicao;
-    private List<Atividade> atividades;
+    private int atividades;
     private Status status;
+    //private List<Atividade> atividades;
     //private int data; //data da análise da requisicao
     //private int data; //data da emissão do alvará
     // validador de CNPJ usar o código semelhante do validador de CPF
     // converter usar o AjaxRender para atividades
-
+    
     public Requisicao() {
+    }
+
+    public Requisicao(String rsp, int boletimInformativo, String cnpj, String razaoSocial, String nomeFantasia, int atividades, Status status) {
+        this.rsp = rsp;
+        this.boletimInformativo = boletimInformativo;
+        this.cnpj = cnpj;
+        this.razaoSocial = razaoSocial;
+        this.nomeFantasia = nomeFantasia;
+        this.atividades = atividades;
+        this.status = status;
     }
 
     public Requisicao(String rsp, int boletimInformativo, String cnpj, Status status) {
@@ -105,11 +116,11 @@ public class Requisicao {
         this.horarioFuncionamento = horarioFuncionamento;
     }
 
-    public List<Atividade> getAtividades() {
+    public int getAtividades() {
         return atividades;
     }
 
-    public void setAtividades(List<Atividade> atividades) {
+    public void setAtividades(int atividades) {
         this.atividades = atividades;
     }
 
