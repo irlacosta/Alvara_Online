@@ -42,11 +42,11 @@
                         <p:menuitem value="Legislação" url="http://www2.portoalegre.rs.gov.br/smde/default.php?p_secao=1387" />
                     </p:menu>
                 </p:layoutUnit>
-                
+
                 <p:layoutUnit position="center">
                     <p:panel header="Renovação Alvará">
                         <h:form id="formulario">
-                                <h:panelGrid id="grid" columns="1">
+                            <h:panelGrid id="grid" columns="1">
 
                                 <div class="ui-sm-12 ui-g-6 ui-g-nopad">
                                     <div class="ui-sm-12 ui-g-11">
@@ -73,7 +73,7 @@
                                         </span>
                                     </div>
                                 </div>
-                                    
+
                                 <h:panelGrid columns="3">
                                     <h:outputLabel value="Boletim Informativo"/>
                                     <p:inputText id="boletimInformativo" value="#{requisicaoBean.requisicao.boletimInformativo}" required="true" label="boletimInformativo"> 
@@ -93,8 +93,8 @@
                                 <h:panelGrid columns="2">
                                     <p:commandButton styleClass="regCommandButton" value="Enviar" action="#{requisicaoBean.insert()}"/>
                                 </h:panelGrid>
-</h:panelGrid>
-                            </h:form>
+                            </h:panelGrid>
+                        </h:form>
                     </p:panel>
                 </p:layoutUnit>
             </p:layout>

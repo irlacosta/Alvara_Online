@@ -45,58 +45,59 @@
                 </p:layoutUnit>
 
                 <p:layoutUnit position="center">
-                    <p:panel header="Cadastrar Nova Requisição">
-                        <h:form id="formulario">
-                            <h:panelGrid id="grid" columns="1">
-                                <h:panelGrid columns="3">
-                                    <!--Gerar número de Boletim informativo automático. Ver tag spinner-->
-                                    <h:outputLabel value="Boletim Informativo" />
-                                    <h:inputText id="boletimInformativo" value="#{requisicaoBean.requisicao.boletimInformativo}" 
-                                                 requiredMessage="CNPJ campo obrigatório." readonly="true" label="boletimInformativo"/>
-                                    <h:message for="boletimInformativo"/>
-                                </h:panelGrid>
-                                <h:panelGrid columns="3">
-                                    <!--Número da Viabilidade- para nova gerar número-->
-                                    <h:outputLabel value="Número da Viabilidade"/>
-                                    <h:inputText id="rsp" value="#{requisicaoBean.requisicao.rsp}"
-                                                 readonly="true" />
-                                    <h:message for="rsp" style="color: red"/>
-                                </h:panelGrid>
-                                <h:panelGrid columns="3">
-                                    <!--em caso de renovação de alvará: CNPJ já traz os dados anteriores-->
-                                    <h:outputLabel value="CNPJ"/>
-                                    <h:inputText id="cnpj" value="#{requisicaoBean.requisicao.cnpj}" label="cnpj"
-                                                 required="true" requiredMessage="CNPJ campo obrigatório."/>
-                                    <h:message for="cnpj"/>
-                                </h:panelGrid>
-                                <h:panelGrid columns="3">
-                                    <!--Razão Social-->
-                                    <h:outputLabel value="Razão Social"/>
-                                    <h:inputText id="razaoSocial" value="#{requisicaoBean.requisicao.razaoSocial}"
-                                                 required="true" requiredMessage="Campo Obrigatório!"/>
-                                    <h:message for="razaoSocial"/>
-                                </h:panelGrid>
-                                <h:panelGrid columns="3">
-                                    <!--Nome Fantasia-->
-                                    <h:outputLabel value="Nome Fantasia"/>
-                                    <h:inputText id="nomeFantasia" value="#{requisicaoBean.requisicao.nomeFantasia}"/>
-                                    <h:message for="nomeFantasia"/>
-                                </h:panelGrid>
-                                <h:panelGrid columns="3">
-                                    <!--Atividade - carregar lista atividades CNAE federal-->
-                                    <h:outputLabel value="Atividade Econômica"/>
-                                    <h:inputText id="atividade" value="#{requisicaoBean.requisicao.atividades}" required="true" requiredMessage="Campo Obrigatório!"/>
-                                    <h:message for="atividade"/>
-                                </h:panelGrid>
-                                <h:panelGrid columns="2">                                
-                                    <p:commandButton styleClass="regCommandButton"   value="ENVIAR" action="#{requisicaoBean.insert()}" />
-                                </h:panelGrid>
-                            </h:panelGrid>
-                        </h:form>
-                    </p:panel>
+                    <h:form id="formulario">
+                        <p:panel header="Cadastrar Nova Requisição">
+                            <h:panelGrid id="grid" columns="3" cellpadding="5">
+                                <!--Gerar número de Boletim informativo automático. Ver tag spinner-->
+                                <h:outputLabel value="Boletim Informativo" />
+                                <p:inputText id="boletimInformativo" value="#{requisicaoBean.requisicao.boletimInformativo}" 
+                                             requiredMessage="CNPJ campo obrigatório." readonly="true" label="boletimInformativo">
+                                </p:inputText>
+                                <p:message for="boletimInformativo"/>
+                                <!--Número da Viabilidade- para nova gerar número-->
+                                <h:outputLabel value="Número da Viabilidade"/>
+                                <p:inputText id="rsp" value="#{requisicaoBean.requisicao.rsp}"
+                                             readonly="true" >
+                                </p:inputText>
+                                <p:message for="rsp" style="color: red"/>
+                                <!--em caso de renovação de alvará: CNPJ já traz os dados anteriores-->
+                                <h:outputLabel value="CNPJ"/>
+                                <p:inputText id="cnpj" value="#{requisicaoBean.requisicao.cnpj}" label="cnpj"
+                                             required="true" requiredMessage="CNPJ campo obrigatório.">
+                                </p:inputText>
+                                <p:message for="cnpj"/>
+                                <!--Razão Social-->
+                                <h:outputLabel value="Razão Social"/>
+                                <p:inputText id="razaoSocial" value="#{requisicaoBean.requisicao.razaoSocial}"
+                                             required="true" requiredMessage="Campo Obrigatório!">
+                                </p:inputText>
+                                <p:message for="razaoSocial"/>
+                                <!--Nome Fantasia-->
+                                <h:outputLabel value="Nome Fantasia"/>
+                                <p:inputText id="nomeFantasia" value="#{requisicaoBean.requisicao.nomeFantasia}">
+                                </p:inputText>
+                                <p:message for="nomeFantasia"/>
+                                <!--Atividade - carregar lista atividades CNAE federal-->
+                                <h:outputLabel value="Atividade Econômica"/>
+                                <p:inputText id="atividades" value="#{requisicaoBean.requisicao.atividades}" required="true" requiredMessage="Campo Obrigatório!">
+                                </p:inputText>
+                                <p:message for="atividades"/>
+                                <p:outputLabel for="status" value="Status" />
+                                <p:selectOneMenu id="status" value="#{requisicaoBean.requisicao.status}">
+                                    <f:selectItem itemLabel="ALVARA_INCLUIDO" itemValue="ALVARA_INCLUIDO" />
+                                    <f:selectItem itemLabel="DEFERIDO" itemValue="DEFERIDO" />
+                                    <f:selectItem itemLabel="INDEFERIDO" itemValue="INDEFERIDO" />
+                                    <f:selectItem itemLabel="DOCUMENTOS_PARA_ANALISE" itemValue="DOCUMENTOS_PARA_ANALISE" />
+                                    <f:selectItem itemLabel="ALVARA_DEFINITIVO" itemValue="ALVARA_DEFINITIVO" />
+                                    <f:selectItem itemLabel="ALVARA_PROVISORIO" itemValue="ALVARA_PROVISORIO" />
+                                    <f:selectItem itemLabel="DOCUMENTOS_PENDENTES" itemValue="DOCUMENTOS_PENDENTES" />                                
+                                </p:selectOneMenu>
+                                <p:commandButton styleClass="regCommandButton" validateClient="true" ajax="false" value="ENVIAR" action="#{requisicaoBean.insert()}" />
+                            </h:panelGrid>                    
+                        </p:panel>
+                    </h:form>
                 </p:layoutUnit>
             </p:layout>
         </h:body>   
     </f:view>
 </html>
-
