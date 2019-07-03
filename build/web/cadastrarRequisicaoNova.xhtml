@@ -31,7 +31,7 @@
 
                     <p:menu>
                         <p:menuitem value="Acessar Login " url="login.xhtml" />
-                        <p:menuitem value="Cadastrar" url="cadastrarRequisicaoNova.xhtml" />                        
+                        <p:menuitem value="Cadastrar Requisição" url="cadastrarRequisicaoNova.xhtml" />                        
                         <p:menuitem value="Listar" url="listar.xhtml" />
                         <p:menuitem value="Cadastrar Usuário" url="cadastrarUsuario.xhtml" />
                         <p:menuitem value="Acompanhar Solicitação" url="#" />
@@ -51,25 +51,25 @@
                                 <!--Gerar número de Boletim informativo automático. Ver tag spinner-->
                                 <h:outputLabel value="Boletim Informativo" />
                                 <p:inputText id="boletimInformativo" value="#{requisicaoBean.requisicao.boletimInformativo}" 
-                                             requiredMessage="CNPJ campo obrigatório." readonly="true" label="boletimInformativo">
+                                             requiredMessage="CNPJ campo obrigatório." required="true" label="boletimInformativo">
                                 </p:inputText>
-                                <p:message for="boletimInformativo"/>
+                                <p:message for="boletimInformativo" style="color: red"/>
                                 <!--Número da Viabilidade- para nova gerar número-->
                                 <h:outputLabel value="Número da Viabilidade"/>
                                 <p:inputText id="rsp" value="#{requisicaoBean.requisicao.rsp}"
-                                             readonly="true" >
+                                             requiredMessage="Campo obrigatório." required="true" label="rsp">
                                 </p:inputText>
                                 <p:message for="rsp" style="color: red"/>
                                 <!--em caso de renovação de alvará: CNPJ já traz os dados anteriores-->
                                 <h:outputLabel value="CNPJ"/>
-                                <p:inputText id="cnpj" value="#{requisicaoBean.requisicao.cnpj}" label="cnpj"
-                                             required="true" requiredMessage="CNPJ campo obrigatório.">
+                                <p:inputText id="cnpj" value="#{requisicaoBean.requisicao.cnpj}"
+                                             requiredMessage="Campo obrigatório." required="true" label="cnpj">
                                 </p:inputText>
-                                <p:message for="cnpj"/>
+                                <p:message for="cnpj" style="color: red"/>
                                 <!--Razão Social-->
                                 <h:outputLabel value="Razão Social"/>
                                 <p:inputText id="razaoSocial" value="#{requisicaoBean.requisicao.razaoSocial}"
-                                             required="true" requiredMessage="Campo Obrigatório!">
+                                             requiredMessage="Campo obrigatório." required="true" label="razaoSocial">
                                 </p:inputText>
                                 <p:message for="razaoSocial"/>
                                 <!--Nome Fantasia-->
@@ -79,7 +79,8 @@
                                 <p:message for="nomeFantasia"/>
                                 <!--Atividade - carregar lista atividades CNAE federal-->
                                 <h:outputLabel value="Atividade Econômica"/>
-                                <p:inputText id="atividades" value="#{requisicaoBean.requisicao.atividades}" required="true" requiredMessage="Campo Obrigatório!">
+                                <p:inputText id="atividades" value="#{requisicaoBean.requisicao.atividades}"
+                                             requiredMessage="Campo obrigatório." required="true" label="atividades">
                                 </p:inputText>
                                 <p:message for="atividades"/>
                                 <p:outputLabel for="status" value="Status" />
