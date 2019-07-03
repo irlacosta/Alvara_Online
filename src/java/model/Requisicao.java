@@ -13,10 +13,10 @@ import java.util.List;
  *
  * @author Irla Silva
  */
-public class Requisicao { //lado requerente    
+public class Requisicao {   
 
-    private String rsp; //RSP
-    private int boletimInformativo; //sistema gera automatico
+    private String rsp;
+    private int boletimInformativo;
     private String cnpj;
     private String razaoSocial;
     private String nomeFantasia;

@@ -1,6 +1,5 @@
 package model;
 
-import model.UsuarioDAO;
 import java.io.Serializable;
 import java.util.List;
 
