@@ -41,6 +41,28 @@ CREATE TABLE `requisicao` (
 `status` VARCHAR(150) NOT NULL
 ) ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
+
+--
+
+-- Estrutura da tabela `usuario`
+
+--
+
+
+
+CREATE TABLE `usuario` (
+
+`idusuario` int(11) NOT NULL,
+ 
+`nome` varchar(200) NOT NULL,
+ 
+`cpf` varchar(20) NOT NULL,
+ 
+`senha` varchar(11) NOT NULL
+
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`,`atividades`, `status`) VALUES
 (1, 'RSP1900043111', '20271', '33.404.754/0001-61','Empresa LTDA','Empresa A','78101011','5611','DEFERIDO');
 
@@ -55,6 +77,18 @@ INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `
 
 INSERT INTO `requisicao` (`idrequisicao`, `rsp`, `boletiminformativo`, `cnpj`, `razaosocial`, `nomefantasia`, `codlogradouro`, `atividades`, `status`) VALUES
 (5, 'RSP1900043115', '20279', '33.404.754/0001-65','Empresa LTDA','Empresa E','78101015','5611','DEFERIDO');
+
+
+INSERT INTO `usuario` (`idusuario`, `nome`, `cpf`, `senha`) VALUES (1, 'Silvia de Castro Bertagnolli', '111.111.111-11', '12345678');
+INSERT INTO `usuario` (`idusuario`, `nome`, `cpf`, `senha`) VALUES (2, 'Tatiany Oleques Lukrafka', '222.222.222-22', '12345678');
+INSERT INTO `usuario` (`idusuario`, `nome`, `cpf`, `senha`) VALUES 
+(3, 'Giovanni Tagliaro', '333.333.333-33', '12345678');
+
+INSERT INTO `usuario` (`idusuario`, `nome`, `cpf`, `senha`) VALUES (4, 'Silvia de Castro', '444.444.444-44', '12345678');
+
+INSERT INTO `usuario` (`idusuario`, `nome`, `cpf`, `senha`) VALUES (5, 'Henrique Lenium', '555.555.555-55', '12345678');
+INSERT INTO `usuario` (`idusuario`, `nome`, `cpf`, `senha`) VALUES (6, 'Davi Silva', '666.666.666-66', '12345678');
+INSERT INTO `usuario` (`idusuario`, `nome`, `cpf`, `senha`) VALUES (9, 'Maria Silva', '777.777.777-77', '12345678');
 
 
 ALTER TABLE `requisicao`

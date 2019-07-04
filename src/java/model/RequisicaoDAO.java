@@ -90,7 +90,7 @@ public class RequisicaoDAO {
             return stmt.execute();
         } catch (SQLException e) {
             e.printStackTrace();
-            System.out.println("exceção com recursos - CADASTRAR RequisicaoDAO");
+            System.out.println("exceção com recursos - CADASTRAR RequisicaoDAO" + e);
         }
         return false;
     }
