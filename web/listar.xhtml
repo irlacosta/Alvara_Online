@@ -48,15 +48,15 @@
                         <h:form>
                             <p:dataTable var="requisicao" value="#{requisicaoBean.list}">
                                 <p:column headerText="CNPJ">
-                                    <h:outputText value="#{requisicaoBean.requisicao.cnpj}" />
+                                    <h:outputText value="#{requisicao.cnpj}" />
                                 </p:column>
 
                                 <p:column headerText="Protocolo">
-                                    <h:outputText value="#{requisicaoBean.requisicao.rsp}" />
+                                    <h:outputText value="#{requisicao.rsp}" />
                                 </p:column>
 
                                 <p:column headerText="Boletim Informativo">
-                                    <h:outputText value="#{requisicaoBean.requisicao.boletimInformativo}" />
+                                    <h:outputText value="#{requisicao.boletimInformativo}" />
                                 </p:column>
 
                                 <p:column headerText="Editar" class="icons">

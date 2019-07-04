@@ -14,25 +14,28 @@
 
                         <h:outputLabel value="Login"/>
                         <p:inputText id="login" value="#{usuarioBean.usuario.cpf}" required="true" label="login"> 
-
                         </p:inputText>
                         <p:message for="login"/>
+                        
                         <h:outputLabel value="Senha"/>
                         <p:password id="senha" value="#{usuarioBean.usuario.senha}" required="true" label="senha"></p:password>
-                        <p:message for="senha" style="color:red"/>
+                        <p:message for="senha"/>
+                        
                         <p:commandButton value="ENVIAR" styleClass="regCommandButton" ajax="false" validateClient="true" action="#{usuarioBean.validar()}"/>
                     </h:panelGrid>
-                    <div id="msg3">
-                        <h:commandLink  action="editarSenha" value="Esqueci minha senha"/>
+                    
+
+                </p:panel>
+                <div id="msg3">
+                        <h:link  outcome="editarSenha" value="Esqueci minha senha"/>
                     </div>
                     
                     <div id="msg2">
                         Ainda não possui acesso?
-                        <h:commandLink  action="cadastrarUsuario" value="Cadastre-se"/>
+                        <h:link outcome="cadastrarUsuario" value="Cadastre-se"/>                        
                     </div>
-
-                </p:panel>
             </h:form>
+            
         </div>
     </ui:define>
 </ui:composition>
