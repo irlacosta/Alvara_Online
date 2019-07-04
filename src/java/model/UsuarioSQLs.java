@@ -6,12 +6,12 @@
 package model;
 
 public enum UsuarioSQLs {
-    INSERT("insert into usuario(nome, identificador, senha) values (?, ?, ?)"), 
+    INSERT("insert into usuario(nome, cpf, senha) values (?, ?, ?)"), 
     LIST_ALL("select * from usuario"),
-    VALIDATE("select nome from usuario where identificador = ? AND senha = ?"),
-    DELETE("delete from usuario where nome=? AND identificador=?"),
-    UPDATE("update usuario set nome=?, senha=? where identificador=?"),
-    SEARCH_ID("select nome from usuario where identificador=?");
+    VALIDATE("select nome from usuario where cpf = ? AND senha = ?"),
+    DELETE("delete from usuario where nome=? AND cpf=?"),
+    UPDATE("update usuario set nome=?, senha=? where cpf=?"),
+    SEARCH_ID("select nome from usuario where cpf=?");
         
     private final String sql;
     UsuarioSQLs(String sql){

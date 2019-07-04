@@ -91,9 +91,9 @@ public class UsuarioDAO {
             ResultSet rs = stmt.executeQuery();
             while (rs.next()) {
                 String nome = rs.getString("nome");
-                String identificador = rs.getString("identificador");
+                String cpf = rs.getString("cpf");
                 String senha = rs.getString("senha");
-                lista.add(new Usuario(nome, identificador, senha));
+                lista.add(new Usuario(nome, cpf, senha));
             }
             return lista;
         } catch (SQLException e) {
