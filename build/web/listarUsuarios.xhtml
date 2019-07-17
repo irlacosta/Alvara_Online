@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>
+                    Alvará Online
+                </title>
+            </f:facet>
+            <h:outputStylesheet library="css" name="estilo.css"/>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+        </h:head>
+        <h:body>
+            <p:layout fullPage="true">
+                <p:layoutUnit position="north" size="80" resizable="true" closable="true" collapsible="true" style="text-align: center">
+                    <h:graphicImage value="images\brasao.png"/>
+                    SISTEMA DE ALVARÁ ONLINE - Prefeitura Municipal de Porto Alegre
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="60" closable="true" collapsible="true" style="text-align: center">                  
+                    <p>Desenvolvimento Irla Silva</p>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="west" size="200" header="Alvará Online" collapsible="true">
+
+                    <p:menu>
+                        <p:menuitem value="Acessar Login " url="login.xhtml" />
+                        <p:menuitem value="Cadastrar Requisição" url="cadastrarRequisicaoNova.xhtml" />
+                        <p:menuitem value="Renovação Alvará" url="cadastrarRequisicaoRenovacao.xhtml" />
+                        <p:menuitem value="Listar Requisições" url="listar.xhtml" />
+                        <p:menuitem value="Cadastrar Usuário" url="cadastrarUsuario.xhtml" />
+                        <p:menuitem value="Listar Usuário" url="listarUsuarios.xhtml" />
+                        <p:menuitem value="Acompanhar Solicitação" url="#" />
+                        <p:menuitem value="Gerenciar Viabilidades" url="listar.xhtml" />
+                        <p:menuitem value="Análise Prévia" url="cadastrarRequisicaoNova.xhtml" />
+                        <p:menuitem value="Baixa Alvará" url="#" />
+                        <p:menuitem value="Taxa" url="#" />
+                        <p:menuitem value="Verificar Autenticidade Alvará" url="#" />
+                        <p:menuitem value="Legislação" url="http://www2.portoalegre.rs.gov.br/smde/default.php?p_secao=1387" />
+                    </p:menu>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <h:form>
+                        <p:panel header="Lista Usuários">
+                            <p:dataTable var="user" value="#{usuarioBean.usuarios}" rows="5" paginator="true"
+                                         paginatorPosition="bottom"
+                                         rowsPerPageTemplate="5, 10, 20"
+                                         paginatorAlwaysVisible="true"
+                                         sortMode="multiple" emptyMessage="Nenhum registro encontrado" >
+                                <p:column headerText="Nome">
+                                    <h:outputText value="#{user.nome}" />
+                                </p:column>
+
+                                <p:column headerText="CPF">
+                                    <h:outputText value="#{user.cpf}" />
+                                </p:column>
+
+                                <p:column headerText="Editar" class="icons">
+                                    <h:commandLink action="#{usuarioBean.editar(user)}"><i class="fas fa-pen"></i></h:commandLink>
+                                </p:column>
+
+                                <p:column headerText="Excluir" class="icons">
+                                    <h:commandLink action="#{usuarioBean.excluir(user)}"><i class="far fa-trash-alt"></i></h:commandLink>
+                                </p:column>
+
+                            </p:dataTable>
+                        </p:panel>
+                    </h:form>
+                </p:layoutUnit>
+            </p:layout>
+        </h:body>
+    </f:view>
+</html>
+

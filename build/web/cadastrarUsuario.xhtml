@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>
+                    Alvará Online
+                </title>
+            </f:facet>
+            <h:outputStylesheet library="css" name="estilo.css"/>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous"/>
+        </h:head>
+        <h:body>
+            <p:layout fullPage="true">
+                <p:layoutUnit position="north" size="80" resizable="true" closable="true" collapsible="true" style="text-align: center">
+                    <h:graphicImage value="images\brasao.png"/>
+                    SISTEMA DE ALVARÁ ONLINE - Prefeitura Municipal de Porto Alegre
+                </p:layoutUnit>
+
+                <p:layoutUnit position="south" size="60" closable="true" collapsible="true" style="text-align: center">                  
+                    <p>Desenvolvimento Irla Silva</p>
+                </p:layoutUnit>
+
+                <p:layoutUnit position="center">
+                    <h:form id="formulario">
+                        <p:panel header="Cadastro Usuário">
+                            <h:panelGrid id="grid" columns="3">
+                                <h:outputLabel value="Nome"/>
+                                <p:inputText id="nome" value="#{usuarioBean.usuario.nome}" required="true" label="nome"> 
+                                    <f:validateLength minimum="5" maximum="150" />
+                                </p:inputText>
+                                <p:message for="nome" />
+                                
+                                <h:outputLabel value="Login(CPF)"/>
+                                <p:inputText id="cpf" value="#{usuarioBean.usuario.cpf}" required="true" label="cpf"> 
+                                    <f:validator validatorId="cpfValidator"/>
+                                </p:inputText>
+                                <p:message for="cpf" />
+
+                                <h:outputLabel value="E-mail"/>
+                                <p:inputText id="email" value="#{usuarioBean.usuario.email}" required="true" label="email"> 
+                                    <f:validateLength minimum="5" maximum="150"/>
+                                </p:inputText>
+                                <p:message for="email" style="color:red"/>
+
+                                <h:outputLabel value="Senha"/>
+                                <p:password  id="senha" value="#{usuarioBean.usuario.senha}" required="true" /> 
+                                <p:message for="senha" />
+
+                                <p:commandButton styleClass="regCommandButton" value="ENVIAR" action="#{usuarioBean.insert()}" />
+                                </h:panelGrid>
+                        </p:panel>
+                    </h:form>
+                </p:layoutUnit>
+            </p:layout>
+        </h:body>
+    </f:view>
+</html>
+
