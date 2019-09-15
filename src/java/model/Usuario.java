@@ -117,8 +117,8 @@ public class Usuario implements Serializable {
         new UsuarioDAO().insert(this);
     }
 
-    public boolean validate() {
-        return UsuarioDAO.validate(this);
+    public List<Usuario> validate() {
+        return new UsuarioDAO().validate(this);
     }
 
     public Integer remove() {

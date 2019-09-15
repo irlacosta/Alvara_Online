@@ -61,7 +61,7 @@ public class UsuarioBean implements Serializable {
         usuario.insert();
         this.usuario = new Usuario();
         usuarios = usuario.list();
-        return "listarUsuarios";
+        return "login";
     }
 
     public String excluir(Usuario user) {
@@ -82,12 +82,11 @@ public class UsuarioBean implements Serializable {
     }
 
     public String validar() {
-        //usar aqui o validar conectando com o banco de dados
-        if ("admin".equals(usuario.getCpf()) && "admin".equals(usuario.getSenha())) {
+        if (!usuario.validate().isEmpty()) {
             this.usuarioLogado = usuario;
             usuario = new Usuario();
             return "index";
-        } else {
+        } else {            
             return "invalido";
         }
     }

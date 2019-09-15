@@ -17,11 +17,20 @@ public class UsuarioDAO {
 
     private EntityManager em;
 
-    public UsuarioDAO() {}
-    
-    
-    static boolean validate(Usuario aThis) { //arrumar este método*****
-        throw new UnsupportedOperationException("Not supported yet.");
+    public UsuarioDAO() {
+    }
+
+    public List<Usuario> validate(Usuario aThis) {
+        em = JPAUtil.getEntityManager();
+        TypedQuery<Usuario> query = em.createQuery(
+                "SELECT u FROM Usuario u "
+                + "where u.cpf = :cpf and u.senha = :senha",
+                Usuario.class);
+        query.setParameter("cpf", aThis.getCpf());
+        query.setParameter("senha", aThis.getSenha());
+        List<Usuario> usuarios = query.getResultList();
+        em.close();
+        return usuarios;
     }
 
     public void insert(Usuario usuario) {
@@ -67,7 +76,7 @@ public class UsuarioDAO {
         em = JPAUtil.getEntityManager();
         TypedQuery<Usuario> query
                 = em.createQuery(
-                       "SELECT u FROM Usuario u",
+                        "SELECT u FROM Usuario u",
                         Usuario.class);
         List<Usuario> usuarios = query.getResultList();
         em.close();
@@ -78,7 +87,7 @@ public class UsuarioDAO {
         em = JPAUtil.getEntityManager();
         TypedQuery<Usuario> query = em.createQuery(
                 "SELECT u FROM Usuario u "
-                + "where lower(p.login) like '%"
+                + "where lower(u.login) like '%"
                 + nome.toLowerCase() + "%'",
                 Usuario.class);
         List<Usuario> usuarios = query.getResultList();
