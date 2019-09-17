@@ -102,14 +102,6 @@ public class RequisicaoBean implements Serializable {
         return "listar";
     }
 
-//    public String validar() {
-//        if(usuario.validar()){
-//           this.usuarioLogado = usuario;    
-//           usuario = new Usuario();
-//           return "menu";
-//        }
-//        return "invalido";
-//    }
     public void clean() {
         this.requisicao = new Requisicao();
     }
@@ -120,5 +112,4 @@ public class RequisicaoBean implements Serializable {
         list = requisicao.list();
         return "listar";
     }
-
 }

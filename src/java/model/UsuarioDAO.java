@@ -34,10 +34,15 @@ public class UsuarioDAO {
     }
 
     public void insert(Usuario usuario) {
-        em = JPAUtil.getEntityManager();
-        em.getTransaction().begin();
-        em.persist(usuario);
-        em.getTransaction().commit();
+        try {
+            em = JPAUtil.getEntityManager();
+            em.getTransaction().begin();
+            em.persist(usuario);
+            em.getTransaction().commit();
+        } catch (Exception ex) {
+            ex.printStackTrace();
+            em.getTransaction().rollback();
+         }
         em.close();
     }
 

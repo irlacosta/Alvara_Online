@@ -3,19 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/web/index_1.xhtml</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/src/java/model/Atividade.java</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/src/conf/persistence.xml</file>
             <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/web/cadastrarUsuario.xhtml</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/src/java/model/Usuario.java</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/web/cadastrarRequisicaoNova.xhtml</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/src/java/model/UsuarioDAO.java</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/src/java/model/Requisicao.java</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/web/index.xhtml</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/web/login.xhtml</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/src/java/model/JPAUtil.java</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/src/java/model/UsuarioSQLs.java</file>
-            <file>file:/C:/Users/SERVER/Documents/NetBeansProjects/irla-trabalho5-integrado/src/java/model/Analista.java</file>
         </group>
     </open-files>
 </project-private>
