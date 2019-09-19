@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+    <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+        <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+        <title>
+            <ui:insert name="titulo">Alvará Online</ui:insert>
+        </title> 
+
+    </h:head>
+
+
+    <h:body> 
+       
+        <main>
+            <div id="menu">
+                <ui:insert name="menu">
+                   
+
+                    <ul id="dropdown1" class="dropdown-content">
+                        <li><a href="#!">Usuários</a></li>
+                        <li><a href="#!">Grupos</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#!">Configurações</a></li>
+                    </ul>
+                    <nav>
+                        <div class="nav-wrapper blue lighten-2">
+                            <a href="home.xhtml" class="brand-logo">Sistema de Ocorrências</a>
+                            <ul class="right hide-on-med-and-down">
+                                <li><a href="home.xhtml">Home</a></li>
+                                <li><a href="chamado.xhtml">Abrir Chamado</a></li>
+                                <li><a href="#">Ocorrências</a></li>
+                                <li><a href="recurso.xhtml">Inventário</a></li>
+                                <li><a href="#">Relatórios</a></li>
+                                <!-- Dropdown Trigger -->
+                                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Administração<i class="material-icons right">arrow_drop_down</i></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+
+
+                </ui:insert>         
+            </div>
+
+
+
+
+            <div id="conteudo">
+                <ui:insert name="corpo" >
+                    <div class="row">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque est ligula, tincidunt at tincidunt sit amet, elementum at tellus. Quisque in sodales eros. Vestibulum mollis ex vel eros posuere, quis eleifend dolor dictum. Morbi a dolor at mi laoreet congue. Maecenas tortor eros, mollis et maximus vel, iaculis eu nisl. Nullam lacinia faucibus urna sit amet vestibulum. Mauris lacinia sem nec est feugiat aliquet. Sed quis egestas ligula, a placerat augue. Donec lacinia mattis sapien nec tempor. Aliquam gravida sapien vitae luctus vulputate. Vestibulum volutpat nisi quis tempus placerat. Ut pretium vitae turpis ut sagittis. Cras mauris diam, auctor eu efficitur blandit, fermentum non nulla.
+
+                    Suspendisse faucibus dui quis pellentesque iaculis. Vivamus ex ipsum, sagittis quis lorem cursus, hendrerit scelerisque elit. Ut mi erat, bibendum ac facilisis vel, blandit vel est. Donec scelerisque, mauris vitae dignissim sollicitudin, libero quam aliquam diam, quis aliquam odio nulla eget augue. Vivamus sollicitudin augue augue, egestas mattis ligula ullamcorper id. Duis vulputate, nulla non accumsan bibendum, dui diam finibus arcu, non cursus nisl nunc sit amet metus. Donec sit amet eleifend massa. Nullam porta posuere iaculis. Donec scelerisque risus sed posuere viverra. Mauris non arcu elit. Aliquam vitae ornare urna. Mauris fringilla dui non auctor consequat. Etiam ac orci eu massa rhoncus congue.
+
+                    In ac turpis non risus lobortis ultricies at vel risus. Suspendisse eu felis in nisi mollis auctor. Quisque malesuada, sem id bibendum eleifend, tellus sapien pretium nibh, quis mollis lectus lacus sit amet sem. Sed mollis, diam sit amet sagittis fermentum, ex orci consequat metus, ac suscipit est libero nec orci. Praesent mollis lobortis purus. Integer venenatis lacus ac massa interdum scelerisque. Donec tempor tristique velit nec gravida.
+
+                    Vivamus pulvinar lobortis tincidunt. Ut placerat libero vel molestie commodo. Aenean vel dolor sed justo dignissim commodo. Ut vestibulum a est vel ultricies. Mauris feugiat augue sed orci tempor condimentum nec id quam. Etiam sit amet mattis lectus. Nullam vitae odio sit amet dui fermentum scelerisque. Maecenas quis diam sed tellus aliquet vestibulum sit amet et augue. Aliquam erat volutpat. Donec consequat ex velit, quis dignissim velit pretium et. Nam interdum rutrum bibendum.
+
+                    Aliquam vulputate aliquet leo, in efficitur neque suscipit at. Aliquam quis sem sagittis, tempus arcu quis, aliquam erat. Duis aliquet, leo in ultrices mattis, nisi nisl blandit risus, eu mattis dolor quam eget neque. Aenean venenatis id neque quis hendrerit. Proin vestibulum lorem quis libero sagittis consequat. Aliquam nec nibh quis lorem congue euismod nec id est. Maecenas hendrerit sem in pharetra fringilla. Quisque mauris turpis, mollis sit amet nisi a, pulvinar eleifend purus. Nam porttitor nec turpis at congue. Nam pulvinar dolor mi. Pellentesque pellentesque, orci sed suscipit accumsan, ex mauris congue diam, ac hendrerit risus odio quis ex. Ut consequat rhoncus tristique. Sed a lorem volutpat, viverra eros at, volutpat dui. Morbi diam metus, pellentesque ac metus vel, dignissim sagittis nibh. Ut vitae mattis metus. Suspendisse ac lorem facilisis, mollis nulla et, condimentum dui.
+                    </div>
+                </ui:insert>   
+                
+                
+            </div>   
+                
+
+                
+                
+                
+             
+
+        </main>
+        <footer class="page-footer blue lighten-2">
+            <ui:insert name="footer">
+                <ui:include src="footer.xhtml" />
+            </ui:insert>     
+        </footer>
+
+ 
+    <!--
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+     -->   
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+    
+        
+        
+         <script type="text/javascript" src="js/scripts.js">
+                
+        </script> 
+
+    </h:body>
+    
+    
+     
+</html>

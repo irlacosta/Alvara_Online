@@ -1,0 +1,134 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="layout.xhtml">
+
+            <ui:define name="corpo">
+
+
+                <h:form id="incidente-form">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <h:outputLabel for="problema">Problema</h:outputLabel>  
+                            <h:inputText id="problema" value="#{incidenteBean.incidente.problema}" required="true" requiredMessage="Informe o Problema"/><br/>
+
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <h:outputLabel for="incidente">Descrição</h:outputLabel>  
+                            <h:inputText id="incidente" value="#{incidenteBean.incidente.descricao}" required="true" requiredMessage="Informe a descrição"/><br/>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <h:outputLabel for="contato">Contato</h:outputLabel>  
+                            <h:inputText id="contato" value="#{incidenteBean.incidente.contato}" required="true" requiredMessage="Informe um contato"/><br/>
+
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                    <div class="row">
+                        <div class="input-field col s6" value="#{incidenteBean.incidente.secretaria}">
+                            <h:selectOneMenu>
+                                <f:selectItem itemValue = "1" itemLabel = "SMF - Secretaria Municipal da Fazenda" /> 
+                                <f:selectItem itemValue = "2" itemLabel = "SMS - Secretaria Municipal da Saúde" /> 
+                                
+                            </h:selectOneMenu>
+                            <label>Secretaria</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6" value="#{incidente.setor}">
+                            <h:selectOneMenu>
+                                <f:selectItem itemValue = "1" itemLabel = "Administrativo" /> 
+                                <f:selectItem itemValue = "2" itemLabel = "Planejamento" /> 
+                                
+                            </h:selectOneMenu>
+                            <label>Secretaria</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <h:outputLabel for="telefone">Telefone</h:outputLabel>  
+                            <h:inputText id="telefone" value="#{usuarioBean.usuario.cpf}" required="true" requiredMessage="Informe um telefone"/><br/>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <h:outputLabel for="patrimonio">Patrimônio</h:outputLabel>  
+                            <h:inputText id="patrimonio" value="#{usuarioBean.usuario.nome}" required="true" requiredMessage="Informe o patrimônio"/><br/>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="input-field col s6">
+
+
+                            <h:selectOneMenu value = "#{requisicaoBean.requisicao.status}"> 
+                                <f:selectItem itemValue = "1" itemLabel = "NOVO" /> 
+                                <f:selectItem itemValue = "2" itemLabel = "PENDENTE" /> 
+                                <f:selectItem itemValue = "3" itemLabel = "EM_ATENDIMENTO" /> 
+                                <f:selectItem itemValue = "4" itemLabel = "EM_MANUTENCAO" /> 
+                                <f:selectItem itemValue = "5" itemLabel = "AGUARDANDO_ENTREGA" /> 
+                                <f:selectItem itemValue = "6" itemLabel = "CANCELADO" /> 
+                                <f:selectItem itemValue = "7" itemLabel = "ENCERRADO" />
+                                <f:selectItem itemValue = "8" itemLabel = "ATRIBUIDO" /> 
+                            </h:selectOneMenu> 
+                            <label>Status</label>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+
+                            <button class="btn waves-effect waves-light">
+                                <h:commandButton  action="#{incidenteBean.salvar()}" />Submit
+
+                            </button>
+
+
+
+                        </div>
+
+
+                    </div>
+
+
+
+
+                </h:form>
+
+
+
+
+            </ui:define>
+
+
+        </ui:composition> 
+    </h:body>
+</html>
+

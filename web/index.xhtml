@@ -1,14 +1,65 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
-        <title>Facelet Title</title>
+        
+   
+       
+        
+      <!-- Compiled and minified CSS -->
+ <link rel="stylesheet" href="css/materialize.min.css" />
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+     
+      
+ <script type="text/javascript" src="js/materialize.min.js"></script>
+          
+
+        <title>Login</title>
     </h:head>
-    <h:body>
-        Hello from Facelets
-        <br />
-        <h:link outcome="welcomePrimefaces" value="Página de boas-vindas do Primefaces" />
+    <h:body styleClass="red lighten-2">
+        <div class="valign-wrapper" id="login-page">
+            <div class="container">
+                <div class="center-align">
+                    <div class="row">
+                        <div class="col s6 offset-s3">
+                            <div class="card">
+                                <div class="card-content">
+                                    <img class="responsive-img" style="max-width: 64px;" src="resources/images/brasao.png" />
+                                    <div class="left-align">
+                                        <h:form id="login-form">
+                                            <p:growl autoUpdate="true"/>
+                                            <div class="row">
+                                                <div class="col s12 input-field">
+                                                    <h:inputText id="cpf" required="true" value= "#{usuarioBean.usuario.cpf}" requiredMessage="CPF inválido!" />
+                                                    <h:outputLabel for="cpf" value="Login(CPF)" />
+                                                </div> 
+                                                <div class="col s12 input-field">
+                                                    <h:inputText id="senha" required="true" value= "#{usuarioBean.usuario.senha}" requiredMessage="Senha inválida!" />
+                                                    <h:outputLabel for="senha" value="Senha" />
+                                                </div> 
+                                                <div class="col s12 input-field">
+                                                    <h:commandLink value="Login" styleClass="btn btn-large red accent-1" action="#{usuarioBean.validar()}" />
+                                                </div>
+                                            </div>                                                                                            
+                                        </h:form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                     
+            </div>                                           
+        </div>
+        
+ 
+      
+   
     </h:body>
 </html>
 
